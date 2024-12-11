@@ -18,7 +18,7 @@ def scorer(word1, target_word, word_list):
         vec_target = model[target_word]
         
         similarity = cosine_similarity(vec1, vec_target)
-       # print(f"cosine similarity: {similarity:.5f}")
+        print(f"cosine similarity: {similarity:.5f}")
         
         #ranking alg, might be able to precompute this but i dont want to do that
         similarities = []
