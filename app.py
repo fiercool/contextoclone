@@ -33,7 +33,7 @@ def guess():
         return jsonify({'feedback': f"'{user_guess}' is not in the word list. try a different word.", 'correct': False})
 
     if scorer(user_guess, session['target_word'], word_list):
-        feedback = f"🎉 Correct! The word was '{session['target_word']}'."
+        feedback = f"🎉 correct! the word was '{session['target_word']}'."
         session.pop('target_word')
         return jsonify({'feedback': feedback, 'correct': True})
 
