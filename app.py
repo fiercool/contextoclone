@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, session, jsonify
 from flask_session import Session
 from randomWord import randomWord
-from score import scorer
+from score import scorer, glove_vocab
 import os
 
 app = Flask(__name__)
@@ -19,21 +19,24 @@ with open("wordlist/filtered_oxford_3000.txt", "r") as file:
 def reset_game():
     session.clear()
     session['target_word'] = randomWord()
-    session['rankings'] = generate_rankings(session['target_word'], word_list)
+    session['rankings'] = generate_rankings(session['target_word'], glove_vocab)
     session['guesses'] = []
     return render_template('index.html')
 
 @app.route('/guess', methods=['POST'])
 def guess():
+    if 'target_word' not in session:
+        return jsonify({'feedback': 'Error: No game found. Refresh to start a new game.', 'correct': False})
 
     data = request.get_json()
     user_guess = data.get('guess', '').strip().lower()
 
-    if user_guess not in word_list:
-        return jsonify({'feedback': f"'{user_guess}' is not in the word list. try a different word.", 'correct': False})
+    
+    if user_guess not in word_list and user_guess not in glove_vocab:
+        return jsonify({'feedback': f"'{user_guess}' is not in the vocabulary. Try a different word.", 'correct': False})
 
-    if scorer(user_guess, session['target_word'], word_list):
-        feedback = f"🎉 correct! the word was '{session['target_word']}'."
+    if scorer(user_guess, session['target_word'], glove_vocab):
+        feedback = f"🎉 Correct! The word was '{session['target_word']}'."
         session.pop('target_word')
         return jsonify({'feedback': feedback, 'correct': True})
 
@@ -49,7 +52,6 @@ def guess():
         'correct': False,
         'guesses': session['guesses']
     })
-
 @app.route('/hint', methods=['GET'])
 def hint():
 
@@ -80,17 +82,17 @@ def giveup():
 def play_again():
     session.clear()
     session['target_word'] = randomWord()
-    session['rankings'] = generate_rankings(session['target_word'], word_list)
+    session['rankings'] = generate_rankings(session['target_word'], glove_vocab)
     session['guesses'] = []
     return jsonify({
         'message': 'game reset',
     })
 
-def generate_rankings(target_word, word_list):
+def generate_rankings(target_word, vocab):
     from score import cosine_similarity, model
     rankings = {}
     target_vector = model[target_word]
-    for word in word_list:
+    for word in vocab:
         try:
             word_vector = model[word]
             similarity = cosine_similarity(target_vector, word_vector)

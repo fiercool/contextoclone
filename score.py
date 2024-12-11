@@ -3,6 +3,7 @@ import config
 from gensim.models import KeyedVectors
 
 model = KeyedVectors.load_word2vec_format('models/glove.6B.50d.word2vec.txt', binary=False)
+glove_vocab = set(model.key_to_index.keys())
 
 def cosine_similarity(vec1, vec2):
   dp = np.dot(vec1, vec2)
