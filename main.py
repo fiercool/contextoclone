@@ -1,8 +1,11 @@
 from score import scorer
 from randomWord import randomWord
 
+targetWord = randomWord()
+
 while True:
-    word1 = input("enter your word: ").strip().lower()
-    word2 = randomWord()
-    print(word2)
-    scorer(word1, word2)
+    guess = input("enter your word: ").strip().lower()
+    result = scorer(guess, targetWord)  
+    
+    if result: 
+        break

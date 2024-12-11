@@ -1,5 +1,5 @@
 import numpy as np
-import scipy.linalg
+import config
 from gensim.models import KeyedVectors
 
 
@@ -20,5 +20,11 @@ def scorer(word1, word2):
     vec2 = model[word2]
     similarity = cosine_similarity(vec1, vec2)
     print("cosine similarity = ", similarity)
+    if 1-(config.WINNING_TOLERANCE) <= similarity <= 1+(config.WINNING_TOLERANCE):
+      print("win")
+      return True
+    else: 
+      return False
   except KeyError:
-    print(f"Error: '{word1}' or '{word2}' is not in the vocabulary.")
+    print(f"Error: '{word1}' is not in the vocabulary.")
+    return False
