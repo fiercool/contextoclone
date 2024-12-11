@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Word Guesser</title>
+      <title>contexto clone</title>
       <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
    </head>
    <body>
@@ -11,8 +11,8 @@
          <h1 class="title">contexto clone</h1>
          <p>made by <span class="info-highlight">tanish</span> | Guesses: <span id="guess-count">0</span></p>
          <form id="guess-form">
-            <input type="text" id="guess-input" placeholder="Type a word" autocomplete="off">
-            <button type="submit">Submit</button>
+            <input type="text" id="guess-input" placeholder="type a word" autocomplete="on">
+            <button type="submit">submit</button>
          </form>
          <div id="feedback"></div>
          <div id="guess-list"></div>
