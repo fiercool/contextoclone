@@ -21,4 +21,4 @@ def scorer(word1, word2):
     similarity = cosine_similarity(vec1, vec2)
     print("cosine similarity = ", similarity)
   except KeyError:
-    print("error, word probably doesnt exist")
+    print(f"Error: '{word1}' or '{word2}' is not in the vocabulary.")

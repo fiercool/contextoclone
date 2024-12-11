@@ -173,7 +173,6 @@ approve
 approving
 approximate
 approximately
-April
 area
 argue
 argument
@@ -224,7 +223,6 @@ attract
 attraction
 attractive
 audience
-August
 aunt
 author
 authority
@@ -758,7 +756,6 @@ debate
 debt
 decade
 decay
-December
 decide
 decision
 declare
@@ -926,7 +923,6 @@ dump
 during
 dust
 duty
-DVD
 dying
 each
 ear
@@ -1150,7 +1146,6 @@ favourite
 fear
 feather
 feature
-February
 federal
 fee
 feed
@@ -1255,7 +1250,6 @@ frequent
 frequently
 fresh
 freshly
-Friday
 fridge
 friend
 friendly
@@ -1564,7 +1558,6 @@ interesting
 interior
 internal
 international
-Internet
 interpret
 interpretation
 interrupt
@@ -1596,7 +1589,6 @@ its
 itself
 jacket
 jam
-January
 jealous
 jeans
 jelly
@@ -1612,9 +1604,7 @@ joy
 judge
 judgement
 juice
-July
 jump
-June
 junior
 just
 justice
@@ -1774,7 +1764,6 @@ manufacturing
 many
 map
 march
-March
 mark
 market
 marketing
@@ -1792,7 +1781,6 @@ mathematics
 matter
 maximum
 may
-May
 maybe
 mayor
 meal
@@ -1857,7 +1845,6 @@ model
 modern
 mom
 moment
-Monday
 money
 monitor
 month
@@ -1883,7 +1870,6 @@ move
 movement
 movie
 moving
-Mrs
 much
 mud
 multiply
@@ -1964,7 +1950,6 @@ nothing
 notice
 noticeable
 novel
-November
 now
 nowhere
 nuclear
@@ -1985,7 +1970,6 @@ occupied
 occupy
 occur
 ocean
-October
 odd
 oddly
 off
@@ -2540,7 +2524,6 @@ satisfaction
 satisfied
 satisfy
 satisfying
-Saturday
 sauce
 save
 saving
@@ -2594,7 +2577,6 @@ separate
 separated
 separately
 separation
-September
 series
 serious
 seriously
@@ -2888,7 +2870,6 @@ sum
 summary
 summer
 sun
-Sunday
 superior
 supermarket
 supply
@@ -3016,7 +2997,6 @@ through
 throughout
 throw
 thumb
-Thursday
 thus
 ticket
 tidy
@@ -3098,7 +3078,6 @@ trust
 truth
 try
 tube
-Tuesday
 tune
 tunnel
 turn
@@ -3257,7 +3236,6 @@ weather
 web
 website
 wedding
-Wednesday
 week
 weekend
 weekly
