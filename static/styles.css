@@ -108,11 +108,14 @@ button#play-again-button:hover {
 }
 
 #guess-list {
-    margin-top: 2rem;
-    width: 90%;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
+    max-height: 200px; 
+    overflow-y: auto; 
+    border: 1px solid #6c5ce7; 
+    padding: 10px;
+    margin-top: 1rem;
+    background-color: #2c2c2c;
+    border-radius: 5px;
+    color: #f3f3f3;
 }
 
 .guess-item {
@@ -144,6 +147,16 @@ button#play-again-button:hover {
     border-radius: 5px;
 }
 
+.hint-giveup-container {
+    position: sticky; /* Keeps the buttons visible */
+    bottom: 10px; /* Sticks the container to the bottom of the viewport */
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Space between buttons */
+    padding: 10px;
+    background-color: #1a1a1a; /* Match the background */
+    z-index: 10; /* Ensure it's above other elements */
+}
 .guess-rank {
     width: 50px;
     text-align: right;
